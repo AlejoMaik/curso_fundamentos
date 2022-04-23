@@ -51,8 +51,11 @@ public class PrincipalP1 {
                     ZombieP1.mostrarMenu6();
                     break;
                 case 7:
+                    System.out.println("Ingrese nombre de la ubicacion");
                     String nombreU = sc.next();
+                    System.out.println("Ingrese la distancia de la ubicacion");
                     float distancia = sc.nextFloat();
+                    System.out.println("Ingrese la cantidad de zombies de la ubicacion");
                     int cantidadZombies = sc.nextInt();
                     UbicacionP1.mostrarMenu7(nombreU, distancia, cantidadZombies);
                     break;
