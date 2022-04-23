@@ -15,9 +15,13 @@ public class PrincipalP1 {
             n = sc.nextInt();
             switch (n) {
                 case 1:
+                    System.out.println("Ingrese nombre del zombie");
                     String nombreZ = sc.next();
-                    int salud = sc.nextInt();
+                    System.out.println("Ingrese salud del zombie");
+                    float salud = sc.nextFloat();
+                    System.out.println("Ingrese el tipo de sangre del zombie");
                     String tipoS = sc.next();
+                    System.out.println("Ingrese la fecha de nacimiento del zombie");
                     int fechaN = sc.nextInt();
                     ZombieP1.mostrarMenu1(nombreZ, salud, tipoS, fechaN);
                     break;
