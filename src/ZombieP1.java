@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ZombieP1 {
     public String nombre;
     public float salud;
@@ -34,31 +36,35 @@ public class ZombieP1 {
     }
 
     public static void mostrarMenu1(String nombre, float salud, String tipoSangre, int fechaNacimienton) {
-        PrincipalP1.dataBaseZombies.add(new ZombieP1(nombre, salud, tipoSangre, fechaNacimienton));
+        PrincipalP1.datosZombies.add(new ZombieP1(nombre, salud, tipoSangre, fechaNacimienton));
     }
 
     public static String mostrarMenu2(int i) {
-        String dato = PrincipalP1.dataBaseZombies.get(i).getNombre() + ", " + PrincipalP1.dataBaseZombies.get(i).getSalud() + ", " + PrincipalP1.dataBaseZombies.get(i).getTipoSangre() + ", " + PrincipalP1.dataBaseZombies.get(i).getFechaDeNacimiento();
+        String dato = PrincipalP1.datosZombies.get(i).getNombre() + ", " + PrincipalP1.datosZombies.get(i).getSalud() + ", " + PrincipalP1.datosZombies.get(i).getTipoSangre() + ", " + PrincipalP1.datosZombies.get(i).getFechaDeNacimiento();
         return dato;
     }
 
-    public static int mostrarMenu3() {
-        return contDeZombies;
+    public static int mostrarMenu3(ArrayList<ZombieP1> zombies) {
+        return zombies.size();
     }
 
     public static String mostrarMenu4(int i) {
-        String dato = PrincipalP1.dataBaseZombies.get(i).getNombre() + ", " + PrincipalP1.dataBaseZombies.get(i).getSalud() + ", " + PrincipalP1.dataBaseZombies.get(i).getTipoSangre() + ", " + PrincipalP1.dataBaseZombies.get(i).getFechaDeNacimiento();
+        String dato = PrincipalP1.datosZombies.get(i).getNombre() + ", " + PrincipalP1.datosZombies.get(i).getSalud() + ", " + PrincipalP1.datosZombies.get(i).getTipoSangre() + ", " + PrincipalP1.datosZombies.get(i).getFechaDeNacimiento();
         return dato;
     }
 
     public static String mostrarMenu5(int i) {
-        String dato = PrincipalP1.dataBaseZombies.get(i).getNombre() + ", " + PrincipalP1.dataBaseZombies.get(i).getSalud() + ", " + PrincipalP1.dataBaseZombies.get(i).getTipoSangre() + ", " + PrincipalP1.dataBaseZombies.get(i).getFechaDeNacimiento();
+        String dato = PrincipalP1.datosZombies.get(i).getNombre() + ", " + PrincipalP1.datosZombies.get(i).getSalud() + ", " + PrincipalP1.datosZombies.get(i).getTipoSangre() + ", " + PrincipalP1.datosZombies.get(i).getFechaDeNacimiento();
         return dato;
     }
 
     public static void mostrarMenu6() {
         for (int i = 0; i < contDeZombies; i++) {
-            PrincipalP1.dataBaseZombies.get(i).setSalud();
+            PrincipalP1.datosZombies.get(i).setSalud();
         }
+    }
+
+    public static String mostrarMenu11() {
+        return PrincipalP1.frasesAleatorias[(int) (Math.random() * (5 - 0)) + 0];
     }
 }

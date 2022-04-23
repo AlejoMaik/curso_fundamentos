@@ -10,7 +10,7 @@ public class UbicacionP1 {
         this.nombre = nombre;
         this.distancia = distancia;
         this.cantidadZombies = cantidadZombies;
-        cantidadUbicaciones++;
+        UbicacionP1.cantidadUbicaciones++;
     }
 
     public String getNombre() {
@@ -26,24 +26,24 @@ public class UbicacionP1 {
     }
 
     public static void mostrarMenu7(String nombre, float distancia, int cantidadZombies) {
-        PrincipalP1.dataBaseUbicaciones.add(new UbicacionP1(nombre, distancia, cantidadZombies));
+        PrincipalP1.datosUbicaciones.add(new UbicacionP1(nombre, distancia, cantidadZombies));
     }
 
     public static String mostrarMenu8(int i) {
-        String dato = PrincipalP1.dataBaseUbicaciones.get(i).getNombre() + ", " + PrincipalP1.dataBaseUbicaciones.get(i).getDistancia() + ", " + PrincipalP1.dataBaseUbicaciones.get(i).getCantidad();
+        String dato = PrincipalP1.datosUbicaciones.get(i).getNombre() + ", " + PrincipalP1.datosUbicaciones.get(i).getDistancia() + ", " + PrincipalP1.datosUbicaciones.get(i).getCantidad();
         return dato;
     }
 
     public static String mostrarMenu9() {
         int temp = 99999;
         for (int i = 0; i < cantidadUbicaciones; i++) {
-            if (PrincipalP1.dataBaseUbicaciones.get(i).getCantidad() < temp) {
-                temp = PrincipalP1.dataBaseUbicaciones.get(i).getCantidad();
+            if (PrincipalP1.datosUbicaciones.get(i).getCantidad() < temp) {
+                temp = PrincipalP1.datosUbicaciones.get(i).getCantidad();
             }
         }
         for (int i = 0; i < cantidadUbicaciones; i++) {
-            if (PrincipalP1.dataBaseUbicaciones.get(i).getCantidad() == temp) {
-                return PrincipalP1.dataBaseUbicaciones.get(i).getNombre() + ", " + PrincipalP1.dataBaseUbicaciones.get(i).getDistancia() + ", " + PrincipalP1.dataBaseUbicaciones.get(i).getCantidad();
+            if (PrincipalP1.datosUbicaciones.get(i).getCantidad() == temp) {
+                return PrincipalP1.datosUbicaciones.get(i).getNombre() + ", " + PrincipalP1.datosUbicaciones.get(i).getDistancia() + ", " + PrincipalP1.datosUbicaciones.get(i).getCantidad();
             }
         }
         return "";
@@ -78,12 +78,8 @@ public class UbicacionP1 {
         return dato;
     }
 
-    public static String mostrarMenu11() {
-        return PrincipalP1.frasesRandoms[(int) (Math.random() * (5 - 0)) + 0];
-    }
-
     public static void mostrarMenu12(int pos) {
-        PrincipalP1.dataBaseUbicaciones.remove(pos);
+        PrincipalP1.datosUbicaciones.remove(pos);
         UbicacionP1.cantidadUbicaciones--;
     }
 }

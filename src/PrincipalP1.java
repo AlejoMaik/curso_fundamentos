@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class PrincipalP1 {
-    public static ArrayList<ZombieP1> dataBaseZombies = new ArrayList<>();
-    public static ArrayList<UbicacionP1> dataBaseUbicaciones = new ArrayList<>();
-    public static String[] frasesRandoms = {"Cada ser humano que salvamos es un zombie menos que combatir", "El mundo que conociamos se ha ido pero, mantenemos nuestra humanidad? Eso es una eleccion", "Estas rodeado de zombies. Eso son las malas noticias", "Cuando los muertos echan a andar, para que obstinarse en matarlos? No hay formas de vencerlos", "Regla No. 7: Viajar ligero. Y no me refiero solo a equipaje."};
+    public static ArrayList<ZombieP1> datosZombies = new ArrayList<>();
+    public static ArrayList<UbicacionP1> datosUbicaciones = new ArrayList<>();
+    public static String[] frasesAleatorias = {"Cada ser humano que salvamos es un zombie menos que combatir", "El mundo que conociamos se ha ido pero, mantenemos nuestra humanidad? Eso es una eleccion", "Estas rodeado de zombies. Eso son las malas noticias", "Cuando los muertos echan a andar, para que obstinarse en matarlos? No hay formas de vencerlos", "Regla No. 7: Viajar ligero. Y no me refiero solo a equipaje."};
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,18 +31,18 @@ public class PrincipalP1 {
                     }
                     break;
                 case 3:
-                    System.out.println(ZombieP1.mostrarMenu3());
+                    System.out.println(ZombieP1.mostrarMenu3(PrincipalP1.datosZombies));
                     break;
                 case 4:
                     for (int i = 0; i < ZombieP1.contDeZombies; i++) {
-                        if (dataBaseZombies.get(i).getTipoSangre().equals("O+") || dataBaseZombies.get(i).getTipoSangre().equals("AB+")) {
+                        if (PrincipalP1.datosZombies.get(i).getTipoSangre().equals("O+") || PrincipalP1.datosZombies.get(i).getTipoSangre().equals("AB+")) {
                             System.out.println(ZombieP1.mostrarMenu4(i));
                         }
                     }
                     break;
                 case 5:
                     for (int i = 0; i < ZombieP1.contDeZombies; i++) {
-                        if (dataBaseZombies.get(i).getFechaDeNacimiento() > 2000) {
+                        if (PrincipalP1.datosZombies.get(i).getFechaDeNacimiento() > 2000) {
                             System.out.println(ZombieP1.mostrarMenu5(i));
                         }
                     }
@@ -68,16 +68,16 @@ public class PrincipalP1 {
                     System.out.println(UbicacionP1.mostrarMenu9());
                     break;
                 case 10:
-                    System.out.println(UbicacionP1.mostrarMenu10(dataBaseUbicaciones));
+                    System.out.println(UbicacionP1.mostrarMenu10(PrincipalP1.datosUbicaciones));
                     break;
                 case 11:
-                    System.out.println(UbicacionP1.mostrarMenu11());
+                    System.out.println(ZombieP1.mostrarMenu11());
                     break;
                 case 12:
-                    if (UbicacionP1.cantidadUbicaciones < 1) {
+                    if (PrincipalP1.datosUbicaciones.size() < 1) {
                         System.out.println("Para usar esta funcion debe crear por lo menos una ubicacion");
                     } else {
-                        System.out.println("Ingrese un numero entre 0 y " + (UbicacionP1.cantidadUbicaciones - 1));
+                        System.out.println("Ingrese un numero entre 0 y " + (PrincipalP1.datosUbicaciones.size() - 1));
                         int pos = sc.nextInt();
                         UbicacionP1.mostrarMenu12(pos);
                     }
