@@ -75,7 +75,7 @@ public class PrincipalP1 {
                     break;
                 case 12:
                     if (UbicacionP1.cantidadUbicaciones < 1) {
-                        System.out.println("Para usar esta funcion debe crear al menos una ubicacion");
+                        System.out.println("Para usar esta funcion debe crear por lo menos una ubicacion");
                     } else {
                         System.out.println("Ingrese un numero entre 0 y " + (UbicacionP1.cantidadUbicaciones - 1));
                         int pos = sc.nextInt();
